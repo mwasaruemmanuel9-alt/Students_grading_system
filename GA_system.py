@@ -1,20 +1,32 @@
-# Student Grading System
+# JKUAT Biostatistics Student Grading System
 
-print("=== Student Grading System ===")
+print("=== JKUAT Biostatistics Grading System ===")
 
-# Input student details
+# Student details
 student_name = input("Enter student name: ")
 
-# Input marks
-maths = float(input("Enter Maths marks: "))
-english = float(input("Enter English marks: "))
-science = float(input("Enter Science marks: "))
+# Core Units
+sta_2130 = float(input("Fundamentals of Biostatistics (STA 2130): "))
+sta_2210 = float(input("Fundamentals of Epidemiological Methods (STA 2210): "))
+sta_2436 = float(input("Modeling Infectious Diseases (STA 2436): "))
+sta_2434 = float(input("Statistical Genetics (STA 2434): "))
+sta_2439 = float(input("Project in Biostatistics (STA 2439): "))
 
-# Calculate total and average
-total = maths + english + science
-average = total / 3
+# Common University Units
+hrd_2101 = float(input("Communication Skills (HRD 2101): "))
+hrd_2102 = float(input("Development Studies & Social Ethics (HRD 2102): "))
+szl_2111 = float(input("HIV/AIDS (SZL 2111): "))
+hrd_2401 = float(input("Entrepreneurship Skills (HRD 2401): "))
 
-# Determine grade
+# Calculations
+total = (
+    sta_2130 + sta_2210 + sta_2436 + sta_2434 + sta_2439 +
+    hrd_2101 + hrd_2102 + szl_2111 + hrd_2401
+)
+
+average = total / 9
+
+# Grade determination
 if average >= 70:
     grade = "A"
 elif average >= 60:
@@ -26,9 +38,9 @@ elif average >= 40:
 else:
     grade = "F"
 
-# Display results
-print("\n--- Result ---")
+# Output
+print("\n--- Student Results ---")
 print("Student Name:", student_name)
 print("Total Marks:", total)
-print("Average:", round(average, 2))
-print("Grade:", grade)
+print("Average Mark:", round(average, 2))
+print("Overall Grade:", grade)
